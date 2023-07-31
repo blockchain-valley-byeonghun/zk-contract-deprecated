@@ -1,55 +1,28 @@
-# typescript-hardhat-boilerplate
+# zk feedback contract version2
 
-# 목차
+# todo
 
-[1.reference](#1.-reference)
+- [x] version 2 틀 만들기
+- [ ] 다른 호환되는 컨트랙트 배포 할 수 있는 환경 조성
+  - semaphore, sbt contract
+  - 테스트 코드가 실행될 때 필요한 모든 셋업이 되는 구조..?
+- [ ] 컨트랙트 고도화
+  - accessControl 분리
+- [ ] 테스트 코드 작성
+  - deploy test 만 가능한 구조 생성하였음
+  - 나중에는 semaphore, sbt contract를 배포하고, 그 address 값들을 feedback 컨트랙트 인자값에 넣어줘야함
 
-[2.installation](#2.-installation)
+---
 
-[3.file directory](#3.-file-directory)
-
-[4.testing contract](#4.-testing-contract)
-
-[5.environment variables](#5.-environment-variables)
-
-[6.deploying contract](#6.-deploying-contract)
-
-## 1. reference
-
-## [Hardhat docs](https://hardhat.org/hardhat-runner/docs/getting-started#overview)
-## [Alchemy Ethereum](https://www.alchemy.com/ethereum)
-## [Alchemy Polygon](https://www.alchemy.com/polygon)
-
-## 2. installation
+## 1. installation
 - node v16.17.1
 - npm 8.15.0
 ```shell
 npm install
 ```
 
-### 2.1 initial setting
-```bash
-npx hardhat init
-npm install --save @openzeppelin/contracts
-npm install dovenv
-```
 
-## 3. file directory
-### 3.1 contracts/
-- 스마트 컨트랙트 소스코드 파일 보관
-### 3.2 scripts/
-- 스마트 컨트랙트를 배포할 때 실행하는 스크립트코드 파일 보관
-### 3.3 test/
-- 스마트 컨트랙트를 테스트하는 소스코드 파일 보관
-### 3.4 hardhat.config.ts
-- 이더리움 테스트넷 또는 메인넷 등 스마트 컨트랙트를 배포할 네트워크를 설정할 수 있는 config 파일
-## 4. testing contract
-- `test/` 폴더에 있는 파일 실행
-```shell
-npx hardhat test test/Lock.ts
-```
-
-## 5. environment variables
+## 2. environment variables
 - `$ touch .env`
 - 또는 rename `.env.example` to `.env`
 ```bash
@@ -58,7 +31,7 @@ ALCHEMY_SEPOLIA_API_KEY=
 PRIVATE_KEY=
 ```
 
-## 6. deploying contract
+## 3. deploying contract
 - `scripts/` 폴더에 있는 파일 실행
 - 로컬에 배포 후 테스트 하는 방법
   - `$ npx hardhat node` 
